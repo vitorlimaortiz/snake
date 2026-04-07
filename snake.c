@@ -4,7 +4,6 @@
 #include <windows.h>
 #include <time.h>
 
-// Definições de tamanho do mapa
 #define TOTAL_FRUTAS 10
 #define LARGURA_MAPA 80 
 #define ALTURA_MAPA 25
@@ -26,7 +25,7 @@ Elemento* primeiro = NULL;
 Elemento* ultimo = NULL;
 Comida lista_comidas[TOTAL_FRUTAS];
 
-// VARIÁVEIS DE POSICIONAMENTO DINÂMICO
+
 int din_offset_x = 0;
 int din_margem_superior = 0;
 
@@ -39,14 +38,13 @@ int delay = 140;
 
 HANDLE hSaida;
 
-/* --- UTILITARIOS --- */
+/* utilitarios */
 
 void irPara(int x, int y) {
     COORD pos = { (short)x, (short)y };
     SetConsoleCursorPosition(hSaida, pos);
 }
 
-// FUNÇÃO QUE CENTRALIZA O JOGO INDEPENDENTE DO MONITOR
 void centralizarJanela() {
     CONSOLE_SCREEN_BUFFER_INFO csbi;
     GetConsoleScreenBufferInfo(hSaida, &csbi);
@@ -80,7 +78,7 @@ void ocultarCursor() {
     SetConsoleCursorInfo(hSaida, &c_info);
 }
 
-/* --- MENUS --- */
+/*  menu  */
 
 int exibirMenu() {
     centralizarJanela(); // Recalcula ao abrir o menu
@@ -130,7 +128,7 @@ void configurarModo() {
     }
 }
 
-/* --- CORPO DA COBRA --- */
+/*  CORPO DA COBRA  */
 
 void inserir_no_inicio(int x, int y) {
     Elemento* novo = (Elemento*)malloc(sizeof(Elemento));
@@ -169,7 +167,7 @@ void limparCobra() {
     primeiro = ultimo = NULL;
 }
 
-/* --- MAPA E INTERFACE --- */
+/*  mapa e interface  */
 
 void desenharMoldura() {
     trocarCor(11);
@@ -211,7 +209,7 @@ void mostrarPainel() {
     irPara(lateralX + 2, base_y + 10); trocarCor(8); printf("P-Pausar  C-Tema");
 }
 
-/* --- COLISAO E COMIDA --- */
+/* colisao e comida */
 
 int detectarImpacto(int x, int y) {
     if (x <= din_offset_x || x >= LARGURA_MAPA + din_offset_x || y <= din_margem_superior || y >= ALTURA_MAPA + din_margem_superior)
@@ -249,7 +247,7 @@ void espalharComidas() {
     for (int i = 0; i < TOTAL_FRUTAS; i++) criarComida(i);
 }
 
-/* --- LOGICA --- */
+/* logica */
 
 void realizarPause() {
     irPara(din_offset_x + (LARGURA_MAPA / 2) - 4, ALTURA_MAPA / 2 + din_margem_superior);
