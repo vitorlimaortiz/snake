@@ -1,3 +1,5 @@
+
+
 ---
 
 ## 1 ESTRUTURAS DE DADOS
@@ -31,7 +33,7 @@ As frutas são gerenciadas por um vetor estatico de structs (comida)
 
 ## 2. ORGANIZAÇÃO DO SISTEMA
 
-O sistema foi dividido em módulos funcionais:
+ O sistema foi dividido em módulos funcionais:
 
 ### 2.1 Menu
 
@@ -77,13 +79,10 @@ Permite ao usuário:
 
 ### 3.1 Variáveis
 
-LARGURA_MAPA (W) e ALTURA_MAPA (H)LARGURA_MAPA (W) e ALTURA_MAPA (H): Definem a área útil de jogo (80x25).
-
-TOTAL_FRUTAS (F): Define a quantidade fixa de alimentos gerados simultaneamente (10 unidades).
-
-pontos (S): Representa o progresso do jogador (o tamanho da cobra é derivado do número de nós na lista encadeada, crescendo conforme os pontos aumentam).
-
-din_offset_x e din_margem_superior: Variáveis de ajuste para centralizar o desenho na tela do console.
+* LARGURA_MAPA (W) e ALTURA_MAPA (H)LARGURA_MAPA (W) e ALTURA_MAPA (H): Definem a área útil de jogo (80x25).
+* TOTAL_FRUTAS (F): Define a quantidade fixa de alimentos gerados simultaneamente (10 unidades).
+* pontos (S): Representa o progresso do jogador (o tamanho da cobra é derivado do número de nós na lista encadeada, crescendo conforme os pontos aumentam).
+* din_offset_x e din_margem_superior: Variáveis de ajuste para centralizar o desenho na tela do console.
 
 
 ### 3.2 Principais Funções
@@ -120,12 +119,14 @@ din_offset_x e din_margem_superior: Variáveis de ajuste para centralizar o dese
 
 ## 8. FUNCIONALIDADES DO SISTEMA
 
-*O sistema desenvolvido é capaz de:
+
+O sistema desenvolvido é capaz de:
+
 * Movimentação Fluida 
-*Níveis de Dificuldade
-*Sistema de Recorde
-*Interface Dinâmica
-*Sistema Multi-Frutas
-*Gestão de Estado: Menus interativos, pausa e tela de Game Over com opções de retorno.
+* Níveis de Dificuldade
+* Sistema de Recorde
+* Interface Dinâmica
+* Sistema Multi-Frutas
+* Gestão de Estado: Menus interativos, pausa e tela de Game Over com opções de retorno.
 
 ---
